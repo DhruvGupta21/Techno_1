@@ -5,7 +5,7 @@ const productController = require('../controllers/productController.js')
 const router = require('express').Router()
 
 // use routers
-router.post('/addStudent', productController.upload, productController.addStudent)
+router.post('/addStudent', productController.addStudent)
 
 router.get('/getAllStudents', productController.getAllStudents)
 
