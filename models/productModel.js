@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING
         }
     }, {
-        tableName: 'Techno' // Explicitly set the table name
+        tableName: 'Techno'
     });
 
     return Techno;
