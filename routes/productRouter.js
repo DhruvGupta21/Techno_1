@@ -9,9 +9,6 @@ router.post('/addStudent', productController.addStudent)
 
 router.get('/getAllStudents', productController.getAllStudents)
 
-router.get('/published', productController.getPublishedProduct)
-
-
 // Products router
 router.get('/:id', productController.getOneStudent)
 
