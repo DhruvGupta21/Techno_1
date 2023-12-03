@@ -11,7 +11,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 const router = require('./routes/productRouter.js')
-app.use('/api/router', router)
+app.use('/api/Techno', router)
 
 app.get('/', (req, res) => {
     res.json({ message: 'hello' })

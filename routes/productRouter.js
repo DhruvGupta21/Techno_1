@@ -1,22 +1,17 @@
-const productController = require('../controllers/productController.js')
-
-
-// router
-const router = require('express').Router()
+const router = require('express').Router();
+const productController = require('../controllers/productController.js');
 
 // use routers
-router.post('/addStudent', productController.upload, productController.addStudent)
+router.post('/addStudent', productController.addStudent);
 
-router.get('/getAllStudents', productController.getAllStudents)
-
-router.get('/published', productController.getPublishedProduct)
+router.get('/getAllStudents', productController.getAllStudents);
 
 
 // Products router
-router.get('/:id', productController.getOneStudent)
+router.get('/:id', productController.getOneStudent);
 
-router.put('/:id', productController.updateStudent)
+router.put('/:id', productController.updateStudent);
 
-router.delete('/:id', productController.deleteStudent)
+router.delete('/:id', productController.deleteStudent);
 
-module.exports = router
+module.exports = router;

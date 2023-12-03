@@ -1,5 +1,4 @@
 module.exports = (sequelize, DataTypes) => {
-
     const Techno = sequelize.define("Techno", {
         Serial_no: {
             type: DataTypes.INTEGER
@@ -13,13 +12,10 @@ module.exports = (sequelize, DataTypes) => {
         },
         DOB: {
             type: DataTypes.STRING
-        },
-        published: {
-            type: DataTypes.BOOLEAN
         }
+    }, {
+        tableName: 'Techno' // Explicitly set the table name
+    });
 
-    })
-
-    return Techno
-
-}
+    return Techno;
+};
