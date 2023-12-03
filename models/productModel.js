@@ -13,11 +13,7 @@ module.exports = (sequelize, DataTypes) => {
         },
         DOB: {
             type: DataTypes.STRING
-        },
-        published: {
-            type: DataTypes.BOOLEAN
         }
-
     })
 
     return Techno
