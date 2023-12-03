@@ -10,8 +10,7 @@ const addStudent = async(req, res) => {
         Serial_no: req.body.Serial_no,
         Name: req.body.Name,
         School: req.body.School,
-        DOB: req.body.DOB,
-        published: req.body.published ? req.body.published : false
+        DOB: req.body.DOB
     }
 
     const Techno = await Techno.create(info)
@@ -59,20 +58,11 @@ const deleteStudent = async(req, res) => {
 
 }
 
-// 6. get published student
-
-const getPublishedStudent = async(req, res) => {
-
-    const Techno = await Techno.findAll({ where: { published: true } })
-    res.status(200).send(Techno)
-
-}
 
 module.exports = {
     addStudent,
     getAllStudents,
     getOneStudent,
     updateStudent,
-    deleteStudent,
-    getPublishedStudent
+    deleteStudent
 }
