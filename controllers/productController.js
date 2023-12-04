@@ -1,8 +1,8 @@
-// controllers/techno.controller.js
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const db = require('../models');
 const Techno = db.Techno;
+
 // 1. Adding a Student
 const addStudent = async(req, res) => {
     const { Serial_no, Name, School, DOB, username, password } = req.body;
