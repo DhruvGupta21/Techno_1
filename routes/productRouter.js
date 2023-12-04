@@ -1,17 +1,12 @@
+// routes/technoRouter.js
 const router = require('express').Router();
-const productController = require('../controllers/productController.js');
+const productController = require('../controllers/productController');
 
-// use routers
 router.post('/addStudent', productController.addStudent);
-
+router.post('/login', productController.login);
 router.get('/getAllStudents', productController.getAllStudents);
-
-
-// Products router
-router.get('/:id', productController.getOneStudent);
-
-router.put('/:id', productController.updateStudent);
-
-router.delete('/:id', productController.deleteStudent);
+router.get('/getOneStudent/:id', productController.getOneStudent);
+router.put('/updateStudent/:id', productController.updateStudent);
+router.delete('/deleteStudent/:id', productController.deleteStudent);
 
 module.exports = router;

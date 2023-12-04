@@ -1,34 +1,19 @@
-const { Sequelize, DataTypes } = require('sequelize');
-const dbConfig = require('../config/dbConfig.js');
+// models/index.js
+const Sequelize = require('sequelize');
+const dbConfig = require('../config/dbConfig');
 
-const sequelize = new Sequelize(
-    dbConfig.DB,
-    dbConfig.USER,
-    dbConfig.PASSWORD, {
-        host: dbConfig.HOST,
-        dialect: dbConfig.dialect,
-        pool: {
-            max: dbConfig.pool.max,
-            min: dbConfig.pool.min,
-            acquire: dbConfig.pool.acquire,
-            idle: dbConfig.pool.idle
-        }
-    }
-);
+const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
+    host: dbConfig.HOST,
+    dialect: dbConfig.dialect,
+    pool: dbConfig.pool
+});
 
 const db = {};
 
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-db.Techno = require('./productModel.js')(sequelize, DataTypes);
-
-db.sequelize.sync({ force: false })
-    .then(() => {
-        console.log('Database synchronized');
-    })
-    .catch(error => {
-        console.error('Error synchronizing the database:', error);
-    });
+// Initialize User model
+db.Techno = require('./productModel')(sequelize, Sequelize);
 
 module.exports = db;
