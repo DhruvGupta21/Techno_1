@@ -1,4 +1,3 @@
-// models/index.js
 const Sequelize = require('sequelize');
 const dbConfig = require('../config/dbConfig');
 
@@ -13,7 +12,6 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-// Initialize User model
 db.Techno = require('./productModel')(sequelize, Sequelize);
 
 module.exports = db;
